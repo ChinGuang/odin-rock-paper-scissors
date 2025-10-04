@@ -76,3 +76,10 @@ export function playRound(humanChoice, computerChoice) {
             throw new Error(`Unexpected value: ${result}`);
     }
 }
+
+export function getScore() {
+    return {
+        humanScore,
+        computerScore,
+    }
+}
