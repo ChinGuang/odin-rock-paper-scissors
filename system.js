@@ -1,4 +1,4 @@
-import { Display } from "./display";
+import { Display } from "./display.js";
 
 let humanScore = 0;
 let computerScore = 0;
@@ -63,14 +63,14 @@ export function playRound(humanChoice, computerChoice) {
     switch (result) {
         case RockPaperScissorsResultType.WIN:
             Display.createResultText(`You win! ${toCapitalize(humanChoice)} beats ${toCapitalize(computerChoice)}`);
-            humanScore++;
+            Display.setHumanScore(++humanScore);
             break;
         case RockPaperScissorsResultType.TIE:
             Display.createResultText(`It's a tie`);
             break;
         case RockPaperScissorsResultType.LOSE:
             Display.createResultText(`You lose! ${toCapitalize(computerChoice)} beats ${toCapitalize(humanChoice)}`);
-            computerScore++;
+            Display.setCpuScore(++computerScore);
             break;
         default:
             throw new Error(`Unexpected value: ${result}`);

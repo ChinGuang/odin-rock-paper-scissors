@@ -1,4 +1,4 @@
-import { getComputerChoice, playRound, RockPaperScissors } from "./system";
+import { getComputerChoice, playRound, RockPaperScissors } from "./system.js";
 
 const rockButton = document.querySelector("#rock");
 const scissorsButton = document.querySelector('#scissors');
@@ -8,6 +8,6 @@ function handleRPSClick(choice) {
     playRound(choice, getComputerChoice());
 }
 
-rockButton.addEventListener(handleRPSClick(RockPaperScissors.rock));
-scissorsButton.addEventListener(handleRPSClick(RockPaperScissors.scissors));
-paperButton.addEventListener(handleRPSClick(RockPaperScissors.paper));
+rockButton.addEventListener('click', () => handleRPSClick(RockPaperScissors.rock));
+scissorsButton.addEventListener('click', () => handleRPSClick(RockPaperScissors.scissors));
+paperButton.addEventListener('click', () => handleRPSClick(RockPaperScissors.paper));
